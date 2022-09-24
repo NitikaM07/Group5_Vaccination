@@ -1,0 +1,887 @@
+        -:    0:Source:main.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:#include "password.cpp"
+        -:    2:#include "header.hpp"
+        -:    3:#include "vaccine3.cpp"
+        -:    4:using namespace std;
+        -:    5:
+function _ZN11vaccination4menuEv called 1 returned 100% blocks executed 75%
+        1:    6:void vaccination :: menu()
+        -:    7:{
+        1:    8:	system("clear");
+call    0 returned 1
+        -:    9:	int choice;
+        1:   10:	int admin_pass=0;
+        4:   11:	while(choice!=3)
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        -:   12:	{
+        3:   13:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   14:		cout<<endl<<"\t MAIN MENU"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   15:		cout<<endl<<"\t1. User Login"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   16:		cout<<endl<<"\t2. Admin Login"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   17:		cout<<endl<<"\t3. Exit"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   18:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:   19:		cin>>temp;
+call    0 returned 3
+        -:   20:		try
+        -:   21:		{
+        3:   22:			choice=stoi(temp);
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   23:		}
+    =====:   24:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:   25:		{
+    =====:   26:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:   27:		}
+call    0 never executed
+call    1 never executed
+        3:   28:		switch(choice)
+branch  0 taken 1
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 0
+        -:   29:		{
+        1:   30:			case 1:
+        1:   31:				system("clear");
+call    0 returned 1
+        1:   32:				user_login();
+call    0 returned 1
+        1:   33:				break;
+        1:   34:			case 2: system("clear");
+call    0 returned 1
+        1:   35:				admin_pass=checkpassword();
+call    0 returned 1
+       1*:   36:				if(admin_pass==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:   37:				{
+    #####:   38:					printf("\nINVALID PASSWORD!!\n");
+call    0 never executed
+    #####:   39:					continue;
+        -:   40:				}
+        -:   41:				else
+        -:   42:				{
+        1:   43:					admin_login();  
+call    0 returned 1
+        -:   44:				}
+        1:   45:				break;
+        1:   46:			case 3: 
+        1:   47:				system("clear");
+call    0 returned 1
+        1:   48:				break;
+    #####:   49:			default://system("clear"); 
+    #####:   50:				cout<<endl<<"Invalid Choice"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   51:		}
+        -:   52:	}
+        -:   53:	/*void(*p[3])()={user_login,admin_login};
+        -:   54:	  while(choice!=3)
+        -:   55:	  {
+        -:   56:	  cout<<endl<<"---------------------------------"<<endl;
+        -:   57:	  cout<<endl<<"\t MAIN MENU"<<endl;
+        -:   58:	  cout<<endl<<"\t1. User Login"<<endl;
+        -:   59:	  cout<<endl<<"\t2. Admin Login"<<endl;
+        -:   60:	  cout<<endl<<"\t3. Exit"<<endl;
+        -:   61:	  cout<<endl<<"---------------------------------"<<endl;
+        -:   62:	  cin>>choice;
+        -:   63:	  if(choice>0 && choice<3)
+        -:   64:	  {
+        -:   65:	  if(choice == 2)
+        -:   66:	  {
+        -:   67:	  admin_pass=checkpassword();
+        -:   68:	  if(admin_pass==1)
+        -:   69:	  {
+        -:   70:	  printf("\nINVALID PASSWORD!!\n");
+        -:   71:	  continue;
+        -:   72:	  }
+        -:   73:	  else
+        -:   74:	  {
+        -:   75:	  p[choice-1]();  
+        -:   76:	  }
+        -:   77:	  }
+        -:   78:	  else
+        -:   79:	  {
+        -:   80:	  p[choice-1]();
+        -:   81:	  }
+        -:   82:	  }
+        -:   83:	  else if(choice==3)
+        -:   84:	  {
+        -:   85:	  break;
+        -:   86:	  }
+        -:   87:	  else
+        -:   88:	  {
+        -:   89:	  cout<<"Invalid Choice"<<endl;
+        -:   90:	  continue;
+        -:   91:	  }
+        -:   92:	  }*/
+        1:   93:	system("clear");
+call    0 returned 1
+        1:   94:}
+        -:   95:
+function _ZN11vaccination10user_loginEv called 1 returned 100% blocks executed 78%
+        1:   96:void vaccination :: user_login()
+        -:   97:{
+        1:   98:	system("clear");
+call    0 returned 1
+        -:   99:	int choice;
+        -:  100:	//void(*p[3])()={new_user,registered_user,exit};
+        -:  101:	/*cout<<"Enter choice: ";
+        -:  102:	  cin>>choice;
+        -:  103:	  if(choice>0 && choice<4)
+        -:  104:	  {
+        -:  105:	  p[choice-1]();
+        -:  106:	  }
+        -:  107:	  else
+        -:  108:	  {
+        -:  109:	  cout<<"Invalid Choice";
+        -:  110:	  }*/
+        -:  111:
+        4:  112:	while(choice!=3)
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        -:  113:	{
+        3:  114:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  115:		cout<<endl<<"\t User Corner"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  116:		cout<<endl<<"\t 1. New User"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  117:		cout<<endl<<"\t 2. Registered User"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  118:		cout<<endl<<"\t 3. Exit"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  119:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  120:		cout<<endl<<"Enter your choice: "<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  121:		cin>>temp;
+call    0 returned 3
+        -:  122:		try
+        -:  123:		{
+        3:  124:			choice=stoi(temp);
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  125:		}
+    =====:  126:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  127:		{
+    =====:  128:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  129:		}
+call    0 never executed
+call    1 never executed
+        3:  130:		switch(choice)
+branch  0 taken 1
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 0
+        -:  131:		{
+        1:  132:			case 1:
+        1:  133:				system("clear");
+call    0 returned 1
+        1:  134:				new_user();
+call    0 returned 1
+        1:  135:				break;
+        1:  136:			case 2:
+        1:  137:				system("clear");
+call    0 returned 1
+        1:  138:				registered_user();
+call    0 returned 1
+        1:  139:				break;
+        1:  140:			case 3: 
+        1:  141:				system("clear");
+call    0 returned 1
+        1:  142:				break;
+    #####:  143:			default://system("clear"); 
+    #####:  144:				cout<<endl<<"Invalid Choice"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  145:		}
+        -:  146:	}
+        1:  147:}
+        -:  148:
+function _ZN11vaccination11admin_loginEv called 1 returned 100% blocks executed 79%
+        1:  149:void vaccination :: admin_login()
+        -:  150:{
+        1:  151:	system("clear");
+call    0 returned 1
+        -:  152:	int choice;
+        -:  153:
+       10:  154:	while(choice!=8)
+branch  0 taken 9
+branch  1 taken 1 (fallthrough)
+        -:  155:	{
+        9:  156:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  157:		cout<<endl<<"\t Admin Corner"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  158:		cout<<endl<<"\t 1. Show Beneficiary Data"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  159:		cout<<endl<<"\t 2. Add Vaccine stock"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  160:		cout<<endl<<"\t 3. Display Vaccine Stock"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  161:		cout<<endl<<"\t 4. Delete Fully Vaccinated Beneficiaries"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  162:		cout<<endl<<"\t 5. Display non vaccinated beneficiaries"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  163:		cout<<endl<<"\t 6. Display Fully Vaccinated Beneficiaries"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  164:		cout<<endl<<"\t 7. Display Today Vaccinated Beneficiaries"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  165:		cout<<endl<<"\t 8. Exit"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  166:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  167:		cout<<endl<<"Enter your choice: "<<endl;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:  168:		cin>>temp;
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  169:		try
+        -:  170:		{
+        9:  171:			choice=stoi(temp);
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  172:		}
+    =====:  173:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  174:		{
+    =====:  175:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  176:		}
+call    0 never executed
+call    1 never executed
+        9:  177:		admin *ptr=new admin();
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 never executed
+        9:  178:		switch(choice)
+branch  0 taken 2
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 1
+branch  4 taken 1
+branch  5 taken 1
+branch  6 taken 1
+branch  7 taken 0
+branch  8 taken 1
+        -:  179:		{
+        2:  180:			case 1:
+        2:  181:				system("clear");
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  182:				show_bene_data();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  183:				break;
+        1:  184:			case 3:
+        1:  185:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  186:				display_vaccine_stock();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  187:				break;
+        1:  188:			case 4:
+        1:  189:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  190:				delete_fully_vaccinated();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  191:				break;
+        1:  192:			case 5: 
+        1:  193:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  194:				non_vaccinated();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  195:				break;
+        1:  196:			case 6: 
+        1:  197:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  198:				fully_vaccinated();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  199:				break;
+        1:  200:			case 7:
+        1:  201:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  202:				today_vaccinated();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  203:				break;
+        1:  204:			case 8: 
+        1:  205:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  206:				break;
+    #####:  207:			default://system("clear");
+    #####:  208:				cout<<endl<<"Invalid Choice"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  209:			case 2:
+        1:  210:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  211:				thread thread1(&admin::add_vaccine_stock,ptr);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+call    4 never executed
+        1:  212:				thread1.join();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  213:				//add_vaccine_stock();
+        1:  214:				break;
+        -:  215:		}
+        -:  216:	}
+        1:  217:}
+function _ZN4user8new_userEv called 1 returned 100% blocks executed 78%
+        1:  218:void user :: new_user()
+        -:  219:{
+        1:  220:	system("clear");
+call    0 returned 1
+        -:  221:	int choice;
+        -:  222:
+        4:  223:	while(choice!=3)
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        -:  224:	{
+        3:  225:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  226:		cout<<endl<<"\t User Corner"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  227:		cout<<endl<<"\t 1. Create account"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  228:		cout<<endl<<"\t 2. View Details"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  229:		cout<<endl<<"\t 3. Exit"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  230:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  231:		cout<<endl<<"Enter your choice: "<<endl;
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        3:  232:		cin>>temp;
+call    0 returned 3
+        -:  233:		try
+        -:  234:		{
+        3:  235:			choice=stoi(temp);
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  236:		}
+    =====:  237:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  238:		{
+    =====:  239:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  240:		}
+call    0 never executed
+call    1 never executed
+        3:  241:		switch(choice)
+branch  0 taken 1
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 0
+        -:  242:		{
+        1:  243:			case 1:
+        1:  244:				system("clear");
+call    0 returned 1
+        1:  245:				create_account();
+call    0 returned 1
+        1:  246:				break;
+        1:  247:			case 2:
+        1:  248:				system("clear");
+call    0 returned 1
+        1:  249:				view_details();
+call    0 returned 1
+        1:  250:				break;
+        1:  251:			case 3: 
+        1:  252:				system("clear");
+call    0 returned 1
+        1:  253:				break;
+    #####:  254:			default://system("clear");
+    #####:  255:				cout<<endl<<"Invalid Choice"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  256:		}
+        -:  257:	}
+        1:  258:}
+        -:  259:
+function _ZN4user15registered_userEv called 1 returned 100% blocks executed 73%
+        1:  260:void user :: registered_user()
+        -:  261:{
+        1:  262:	system("clear");
+call    0 returned 1
+        -:  263:	int choice;
+        -:  264:
+        6:  265:	while(choice!=5)
+branch  0 taken 5
+branch  1 taken 1 (fallthrough)
+        -:  266:	{
+        5:  267:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  268:		cout<<endl<<"\t User Corner"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  269:		cout<<endl<<"\t 1. Select centre"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  270:		cout<<endl<<"\t 2. Book Vaccine Slot"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  271:		cout<<endl<<"\t 3. View Details"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  272:		cout<<endl<<"\t 4. Get Vaccinated"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  273:		cout<<endl<<"\t 5. Exit"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  274:		cout<<endl<<"---------------------------------"<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  275:		cout<<endl<<"Enter your choice: "<<endl;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:  276:		cin>>temp;
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  277:		try
+        -:  278:		{
+        5:  279:			choice=stoi(temp);
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  280:		}
+    =====:  281:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  282:		{
+    =====:  283:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  284:		}
+call    0 never executed
+call    1 never executed
+        5:  285:		user *ptr=new user();
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 never executed
+        5:  286:		switch(choice)
+branch  0 taken 1
+branch  1 taken 1
+branch  2 taken 1
+branch  3 taken 1
+branch  4 taken 0
+branch  5 taken 1
+        -:  287:		{
+        1:  288:			case 1:
+        1:  289:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  290:				select_centre();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  291:				break;
+        1:  292:			case 3: 
+        1:  293:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  294:				register_details();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  295:				break;
+        1:  296:			case 4: 
+        1:  297:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  298:				get_vaccinated();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  299:				break;
+        1:  300:			case 5: 
+        1:  301:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  302:				break;
+    #####:  303:			default: system("clear"); 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  304:				 cout<<endl<<"Invalid Choice"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  305:			case 2:
+        1:  306:				system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  307:				thread thread1(&user::book_slot,ptr);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+call    4 never executed
+        1:  308:				thread1.join();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  309:				//book_slot();
+        1:  310:				break;
+        -:  311:		}
+        -:  312:	}
+        1:  313:}
+function main called 1 returned 100% blocks executed 83%
+        1:  314:int main()
+        -:  315:{	
+        1:  316:	vaccination v;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  317:	reg_file_to_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  318:	vaccine_file_to_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  319:
+        1:  320:	v.menu();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  321:
+        1:  322:	reg_list_to_file(); 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  323:	vaccine_list_to_file(); 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  324:
+        1:  325:	return EXIT_SUCCESS;
+        1:  326:}
+call    0 returned 1
+call    1 never executed

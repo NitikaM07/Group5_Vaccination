@@ -1,0 +1,188 @@
+header.hpp:59:4: performance: Variable 'centre' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+   centre="NA";
+   ^
+header.hpp:85:4: performance: Variable 'centre1' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+   centre1="Hawkins";
+   ^
+header.hpp:86:4: performance: Variable 'centre2' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+   centre2="Riverdale";
+   ^
+header.hpp:87:4: performance: Variable 'centre3' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+   centre3="Central Perk";
+   ^
+vaccine3.cpp:712:9: style: Condition 'flag==1' is always false [knownConditionTrueFalse]
+ if(flag==1)
+        ^
+vaccine3.cpp:703:11: note: Assignment 'flag=0', assigned value is 0
+ int flag=0;
+          ^
+vaccine3.cpp:712:9: note: Condition 'flag==1' is always false
+ if(flag==1)
+        ^
+password.cpp:95:6: style: Variable 'nchr' is reassigned a value before the old one has been used. [redundantAssignment]
+ nchr=password(&p,MAXPW,'*',fp);
+     ^
+password.cpp:91:6: note: nchr is assigned
+ nchr=password(&p,MAXPW,'*',fp);
+     ^
+password.cpp:95:6: note: nchr is overwritten
+ nchr=password(&p,MAXPW,'*',fp);
+     ^
+validation.cpp:35:6: style: The scope of the variable 'y' can be reduced. [variableScope]
+ int y;
+     ^
+vaccine3.cpp:147:6: style: The scope of the variable 'choice' can be reduced. [variableScope]
+ int choice=0;
+     ^
+file.cpp:25:7: style: Local variable 'temp' shadows outer variable [shadowVariable]
+  int temp = sizeof(u);
+      ^
+vaccine3.cpp:10:8: note: Shadowed declaration
+string temp,input;
+       ^
+file.cpp:25:7: note: Shadow variable
+  int temp = sizeof(u);
+      ^
+file.cpp:57:7: style: Local variable 'temp' shadows outer variable [shadowVariable]
+  int temp = sizeof(ad);
+      ^
+vaccine3.cpp:10:8: note: Shadowed declaration
+string temp,input;
+       ^
+file.cpp:57:7: note: Shadow variable
+  int temp = sizeof(ad);
+      ^
+vaccine3.cpp:147:6: style: Local variable 'choice' shadows outer variable [shadowVariable]
+ int choice=0;
+     ^
+main.cpp:6:5: note: Shadowed declaration
+int choice;
+    ^
+vaccine3.cpp:147:6: note: Shadow variable
+ int choice=0;
+     ^
+vaccine3.cpp:203:12: style: Local variable 'l1' shadows outer variable [shadowVariable]
+ list<user>l1 (lc);
+           ^
+header.hpp:109:12: note: Shadowed declaration
+list<user> l1;
+           ^
+vaccine3.cpp:203:12: note: Shadow variable
+ list<user>l1 (lc);
+           ^
+vaccine3.cpp:220:6: style: Local variable 'choice' shadows outer variable [shadowVariable]
+ int choice;
+     ^
+main.cpp:6:5: note: Shadowed declaration
+int choice;
+    ^
+vaccine3.cpp:220:6: note: Shadow variable
+ int choice;
+     ^
+vaccine3.cpp:318:12: style: Local variable 'l1' shadows outer variable [shadowVariable]
+ list<user>l1 (lc);
+           ^
+header.hpp:109:12: note: Shadowed declaration
+list<user> l1;
+           ^
+vaccine3.cpp:318:12: note: Shadow variable
+ list<user>l1 (lc);
+           ^
+vaccine3.cpp:335:13: style: Local variable 'l2' shadows outer variable [shadowVariable]
+ list<admin>l2 (lc2);
+            ^
+header.hpp:111:13: note: Shadowed declaration
+list<admin> l2;
+            ^
+vaccine3.cpp:335:13: note: Shadow variable
+ list<admin>l2 (lc2);
+            ^
+vaccine3.cpp:236:15: style: Local variable 'it' shadows outer variable [shadowVariable]
+   for(string it:v)
+              ^
+vaccine3.cpp:223:23: note: Shadowed declaration
+ list<user>::iterator it;
+                      ^
+vaccine3.cpp:236:15: note: Shadow variable
+   for(string it:v)
+              ^
+vaccine3.cpp:457:12: style: Local variable 'l1' shadows outer variable [shadowVariable]
+ list<user>l1 (lc);
+           ^
+header.hpp:109:12: note: Shadowed declaration
+list<user> l1;
+           ^
+vaccine3.cpp:457:12: note: Shadow variable
+ list<user>l1 (lc);
+           ^
+vaccine3.cpp:512:6: style: Local variable 'choice' shadows outer variable [shadowVariable]
+ int choice,add=0;
+     ^
+main.cpp:6:5: note: Shadowed declaration
+int choice;
+    ^
+vaccine3.cpp:512:6: note: Shadow variable
+ int choice,add=0;
+     ^
+validation.cpp:91:31: performance: Function parameter 'g' should be passed by const reference. [passedByValue]
+bool gender_validation(string g)
+                              ^
+password.cpp:95:6: style: Variable 'nchr' is assigned a value that is never used. [unreadVariable]
+ nchr=password(&p,MAXPW,'*',fp);
+     ^
+vaccine3.cpp:203:15: style: Variable 'l1' is assigned a value that is never used. [unreadVariable]
+ list<user>l1 (lc);
+              ^
+vaccine3.cpp:318:15: style: Variable 'l1' is assigned a value that is never used. [unreadVariable]
+ list<user>l1 (lc);
+              ^
+vaccine3.cpp:335:16: style: Variable 'l2' is assigned a value that is never used. [unreadVariable]
+ list<admin>l2 (lc2);
+               ^
+vaccine3.cpp:457:15: style: Variable 'l1' is assigned a value that is never used. [unreadVariable]
+ list<user>l1 (lc);
+              ^
+file.cpp:7:57: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for (list<user> :: iterator t = l1.begin();t!=l1.end();t++)
+                                                        ^
+file.cpp:39:58: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for (list<admin> :: iterator t = l2.begin();t!=l2.end();t++)
+                                                         ^
+vaccine3.cpp:26:55: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+  for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+                                                      ^
+vaccine3.cpp:117:54: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+                                                     ^
+vaccine3.cpp:157:33: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(it=l1.begin();it!=l1.end();it++)
+                                ^
+vaccine3.cpp:224:33: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(it=l1.begin();it!=l1.end();it++)
+                                ^
+vaccine3.cpp:387:54: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+                                                     ^
+vaccine3.cpp:410:54: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+                                                     ^
+vaccine3.cpp:501:54: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+                                                     ^
+vaccine3.cpp:616:55: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(list<admin>::iterator it=l2.begin();it!=l2.end();it++)
+                                                      ^
+vaccine3.cpp:637:54: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+                                                     ^
+vaccine3.cpp:675:33: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(it=l1.begin();it!=l1.end();it++)
+                                ^
+vaccine3.cpp:705:33: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(it=l1.begin();it!=l1.end();it++)
+                                ^
+vaccine3.cpp:735:33: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for(it=l1.begin();it!=l1.end();it++)
+                                ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+

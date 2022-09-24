@@ -1,0 +1,188 @@
+        -:    0:Source:file.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/**********************************************************************************
+        -:    2:  *  FILENAME     : file.c
+        -:    3:  *  
+        -:    4:  *  DESCRIPTION : The file.cpp contains all list to file and file to list
+        -:    5:  *                  function and perform all designated tasks.
+        -:    6:  *
+        -:    7:  *  REVISION HISTORY
+        -:    8:  *
+        -:    9:  *  DATE             NAME          REASON
+        -:   10:  *
+        -:   11:  * -----------------------------------------------------
+        -:   12:  *
+        -:   13:  *                    Username       Perform Operations
+        -:   14:  *
+        -:   15:  * ********************************************************************************/
+        -:   16:#include "header.hpp" // Required header file
+        -:   17:using namespace std;
+        -:   18:
+function _Z16reg_list_to_filev called 1 returned 100% blocks executed 100%
+        1:   19:int reg_list_to_file()	
+        -:   20:{
+        1:   21:	fl.open("Registered_file",ios::out | ios::binary);
+call    0 returned 1
+call    1 returned 1
+        2:   22:	for (list<user> :: iterator t = l1.begin();t!=l1.end();t++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        -:   23:	{
+        1:   24:		fl.write((char *) &t, sizeof(user));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   25:	}
+        1:   26:	fl.close();
+call    0 returned 1
+        1:   27:	return 0;
+        -:   28:}
+function _Z16reg_file_to_listv called 1 returned 100% blocks executed 55%
+        1:   29:int reg_file_to_list()
+        -:   30:{
+        1:   31:	user u;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32:	fl2.open("Registered_file",ios::in | ios::binary);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   33:	if(!fl2)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        -:   34:	{
+        1:   35:		cout<<"File can't open"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   36:		return EXIT_FAILURE;
+        -:   37:	}
+        -:   38:	else
+        -:   39:	{
+    #####:   40:		int temp = sizeof(u);
+    #####:   41:		fl2.read((char *) &u, temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   42:		while(!fl2.eof())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:   43:		{
+    #####:   44:			l1.push_back(u);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   45:			fl2.read((char *) &u, temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   46:		}
+    #####:   47:		fl2.close();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   48:	}
+    #####:   49:	return EXIT_SUCCESS;
+        1:   50:}
+call    0 returned 1
+call    1 never executed
+function _Z20vaccine_list_to_filev called 1 returned 100% blocks executed 100%
+        1:   51:int vaccine_list_to_file()
+        -:   52:{
+        1:   53:	fl.open("Vaccine_file",ios::out | ios::binary);
+call    0 returned 1
+call    1 returned 1
+        2:   54:	for (list<admin> :: iterator t = l2.begin();t!=l2.end();t++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        -:   55:	{
+        1:   56:		fl.write((char *) &t, sizeof(admin));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   57:	}
+        1:   58:	fl.close();
+call    0 returned 1
+        1:   59:	return 0;
+        -:   60:}
+function _Z20vaccine_file_to_listv called 1 returned 100% blocks executed 55%
+        1:   61:int vaccine_file_to_list()
+        -:   62:{
+        1:   63:	admin ad;	
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   64:	fl2.open("Vaccine_file",ios::in | ios::binary);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   65:	if(!fl2)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        -:   66:	{
+        1:   67:		cout<<"File can't open"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   68:		return EXIT_FAILURE;
+        -:   69:	}
+        -:   70:	else
+        -:   71:	{
+    #####:   72:		int temp = sizeof(ad);
+    #####:   73:		fl2.read((char *) &ad, temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   74:		while(!fl2.eof())
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:   75:		{
+    #####:   76:			l2.push_back(ad);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:			fl2.read((char *) &ad, temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   78:		}
+    #####:   79:		fl2.close();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   80:	}
+    #####:   81:	return EXIT_SUCCESS;
+        1:   82:}
+call    0 returned 1
+call    1 never executed

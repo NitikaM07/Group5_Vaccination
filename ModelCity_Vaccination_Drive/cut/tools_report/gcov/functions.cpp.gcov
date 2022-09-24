@@ -1,0 +1,2401 @@
+        -:    0:Source:vaccine3.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef FUNC1
+        -:    2:#define FUNC1
+        -:    3:
+        -:    4:#include "validation.cpp"
+        -:    5:#include "header.hpp"
+        -:    6:#include "file.cpp"
+        -:    7:#include <unistd.h>
+        -:    8:
+        -:    9:using namespace std;
+        -:   10:string temp,input;
+        -:   11:mutex accum_mutex;
+        -:   12:
+        -:   13:
+function _ZN4user14create_accountEv called 1 returned 100% blocks executed 66%
+        1:   14:int user :: create_account()
+        -:   15:{
+        1:   16:	string n2,a4;
+call    0 returned 1
+call    1 returned 1
+        -:   17:	while(1)
+        -:   18:	{
+        1:   19:		cout<<endl<<"Enter Aadhar Number : ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   20:		cin>>input;	
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   21:		if(aadhar_len(input)==false)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+    #####:   22:			continue;
+        -:   23:
+        1:   24:		int flag = 0;
+        -:   25:
+       1*:   26:		for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 0
+branch  5 taken 1 (fallthrough)
+        -:   27:		{
+    #####:   28:			if(it->aadhar_no == input)
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   29:			{
+    #####:   30:				flag=1;
+    #####:   31:				break;
+        -:   32:			}
+        -:   33:		}
+        -:   34:		//cout<<flag<<endl;
+        1:   35:		if(flag == 1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:   36:		{
+    #####:   37:			cout<<"Account with this already exists"<<endl<<"Registration not completed"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    #####:   38:			return 0;
+        -:   39:		}
+        -:   40:		else
+        -:   41:		{
+        1:   42:			u1.aadhar_no=input;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   43:			break;
+        -:   44:		}
+    #####:   45:	}
+        -:   46:
+        -:   47:	while(1)
+        -:   48:	{
+        1:   49:		cout<<endl<<"Enter your Age : ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   50:		cin>>input;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   51:		if(age_validation(input)==false)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+    #####:   52:			return 0;
+        -:   53:		else
+        -:   54:		{
+        1:   55:			u1.age=stoi(input);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56:			break; //should terminate the program.
+        -:   57:		}
+        -:   58:
+        -:   59:	}
+        -:   60:	while(1)
+        -:   61:	{
+       1*:   62:		cout<<endl<<"Enter your name : ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   63:		cin>>input;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   64:		if(name_validation(input)==false)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+    #####:   65:			continue;
+        -:   66:		else
+        -:   67:		{
+        1:   68:			u1.name=input;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69:			break; 
+        -:   70:		}
+        -:   71:	}
+        1:   72:	n2=u1.name.substr(0,2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+call    4 returned 1
+        1:   73:	a4=u1.aadhar_no.substr(0,4);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+call    4 returned 1
+        1:   74:	u1.registration_id=n2+a4;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+call    4 returned 1
+        1:   75:	cout<<endl<<"Your Registeration ID is : "<<u1.registration_id<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        -:   76:	while(1)
+        -:   77:	{
+       1*:   78:		cout<<endl<<"Enter Gender (F/M/O) : ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   79:		cin>>input;	
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   80:		if(gender_validation(input)==false)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+call    9 never executed
+    #####:   81:			continue;
+        -:   82:		else
+        -:   83:		{
+        1:   84:			u1.gender=input;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85:			break;
+        -:   86:		}
+        -:   87:	}
+        1:   88:	l1.push_back(u1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   89:
+        1:   90:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91:	return 0;
+        1:   92:}
+call    0 returned 1
+call    1 returned 1
+call    2 never executed
+call    3 never executed
+function _ZN4user9view_userEv called 1 returned 100% blocks executed 100%
+        1:   93:int user :: view_user()
+        -:   94:{
+        1:   95:	cout<<aadhar_no<<"\t"<<name<<"\t"<<age<<"\t"<<gender<<"\t"<<shots<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+        1:   96:	return EXIT_SUCCESS;
+        -:   97:}
+function _ZN4user20view_registered_userEv called 4 returned 100% blocks executed 100%
+        4:   98:int user :: view_registered_user()
+        -:   99:{
+        4:  100:	cout<<aadhar_no<<"\t"<<name<<"\t"<<age<<"\t"<<gender<<"\t"<<centre<<"\t\t"<<time_s<<"\t\t"<<shots<<endl;
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+call    3 returned 4
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+call    7 returned 4
+call    8 returned 4
+call    9 returned 4
+call   10 returned 4
+call   11 returned 4
+call   12 returned 4
+call   13 returned 4
+        4:  101:	return EXIT_SUCCESS;
+        -:  102:}
+        -:  103:
+function _ZN4user12view_detailsEv called 1 returned 100% blocks executed 81%
+        1:  104:int user :: view_details()
+        -:  105:{
+        1:  106:	string m_aadhar_no;
+call    0 returned 1
+        1:  107:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  108:	{
+    #####:  109:		cout<<"Empty File "<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  110:		return EXIT_FAILURE;
+        -:  111:	}
+        1:  112:	cout<<"Enter your Aadhar number to view your details: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  113:	cin>>m_aadhar_no;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  114:	cout<<endl<<"----------------View Details-----------------"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  115:	cout<<endl<<"Aadhar\tName\tAge\tGender\tShots"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+       1*:  116:	for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1
+branch  5 taken 0 (fallthrough)
+        -:  117:	{
+        1:  118:		if(it->get_aadhar()==m_aadhar_no)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        -:  119:		{
+        1:  120:			it->view_user();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  121:			break;
+        -:  122:		}
+        -:  123:	}
+        1:  124:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  125:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  126:	return EXIT_SUCCESS;
+        1:  127:}
+call    0 returned 1
+call    1 never executed
+        -:  128:
+        -:  129:
+function _ZN4user13select_centreEv called 1 returned 100% blocks executed 58%
+        1:  130:int user :: select_centre()
+        -:  131:{
+        -:  132:
+        1:  133:	string m_aadhar_no=" ";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  134:	cout<<"Enter your aadhar number: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  135:	cin>>m_aadhar_no;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  136:	cout<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  137:	vector<string> v;
+call    0 returned 1
+        1:  138:	int choice=0;
+        1:  139:	v.push_back("1. Hawkins");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        1:  140:	v.push_back("2. Riverdale");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        1:  141:	v.push_back("3. Central Perk");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        4:  142:	for(string it:v)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 3
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 3
+call    7 returned 4
+branch  8 taken 3
+branch  9 taken 1 (fallthrough)
+        -:  143:	{
+        3:  144:		cout<<it<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  145:	}
+call    0 returned 3
+call    1 never executed
+        1:  146:	int flag=0;
+        1:  147:	list<user> :: iterator it;
+call    0 returned 1
+       1*:  148:	for(it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1
+branch  5 taken 0 (fallthrough)
+        -:  149:	{
+        -:  150:
+        1:  151:		if(it->get_aadhar()==m_aadhar_no)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        -:  152:		{
+        1:  153:			flag=1;
+        1:  154:			break;
+        -:  155:		}
+        -:  156:	}
+        1:  157:	if(flag==1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  158:	{
+        1:  159:		cout<<endl<<"Select one centre"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  160:		cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  161:		try
+        -:  162:		{
+        1:  163:			choice=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  164:		}
+    =====:  165:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  166:		{
+    =====:  167:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  168:			return 0;
+    =====:  169:		}
+call    0 never executed
+call    1 never executed
+        -:  170:
+        1:  171:		if(choice==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  172:		{
+    #####:  173:			it->centre = "Hawkins";
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  174:		}
+        1:  175:		else if(choice==2)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  176:		{
+        1:  177:			it->centre = "Riverdale";
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  178:		}
+    #####:  179:		else if(choice==3)
+branch  0 never executed
+branch  1 never executed
+        -:  180:		{
+    #####:  181:			it->centre = "Central Perk";
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  182:		}
+        -:  183:		else
+        -:  184:		{
+    #####:  185:			cout<<endl<<"Invalid Choice";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  186:		}
+        -:  187:	}
+        -:  188:	else
+        -:  189:	{
+    #####:  190:		cout<<endl<<"Aadhar number not found"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  191:	}
+        -:  192:
+        1:  193:	lc.push_back(u1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  194:	list<user>l1 (lc);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  195:	cout<<endl<<"Your centre for vaccination drive is succesfully selected"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  196:	cout<<endl<<"__________________________________________________________"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  197:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  198:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  199:	return 0;
+        1:  200:}
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+        -:  201:
+function _ZN4user9book_slotEv called 1 returned 100% blocks executed 60%
+        1:  202:int user :: book_slot()
+        -:  203:{
+        -:  204:	//user u1;
+        1:  205:	string m_aadhar_no;
+call    0 returned 1
+        -:  206:	int auto_token;
+        -:  207:	time_t t1;
+        1:  208:	cout<<"Enter your aadhar number: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  209:	cin>>m_aadhar_no;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  210:	cout<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  211:	int choice;
+        -:  212:
+        1:  213:	vector<string> v;
+call    0 returned 1
+        1:  214:	list<user>::iterator it;
+call    0 returned 1
+        1:  215:	for(it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1
+branch  4 taken 0 (fallthrough)
+        -:  216:	{
+        1:  217:		if(it->get_centre()=="NA")
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+        -:  218:		{
+    #####:  219:			cout<<endl<<"Please select your centre first to book the slot"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  220:			return 0;
+        -:  221:		}
+        -:  222:		else
+        -:  223:		{
+        1:  224:			cout<<endl<<endl<<"**************Book your slot**************"<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  225:			v.push_back("1. Morning");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        1:  226:			v.push_back("2. Afternoon");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        3:  227:			for(string it:v)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 2
+call    7 returned 3
+branch  8 taken 2
+branch  9 taken 1 (fallthrough)
+        -:  228:			{
+        2:  229:				cout<<it<<endl;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  230:			}
+call    0 returned 2
+call    1 never executed
+        1:  231:			cout<<endl<<endl<<"*****************************************"<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  232:			if(it->get_aadhar()==m_aadhar_no)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        -:  233:			{
+        1:  234:				cout<<endl<<"Select one slot: "<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  235:				cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  236:				try
+        -:  237:				{
+        1:  238:					choice=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  239:				}
+    =====:  240:				catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  241:				{
+    =====:  242:					cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  243:					return 0;
+    =====:  244:				}
+call    0 never executed
+call    1 never executed
+        1:  245:				srand((unsigned) time(&t1)); //generates random unique token no
+call    0 returned 1
+call    1 returned 1
+        1:  246:				auto_token=rand() % 50;
+call    0 returned 1
+        1:  247:				accum_mutex.lock();; //lock mutex object
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  248:				cout<<endl<<"YOUR TOKEN FOR BOOKING IS: **"<<auto_token<<"**"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:  249:				accum_mutex.unlock();; //release mutex object
+call    0 returned 1
+        1:  250:				cout<<endl<<"PLEASE CONFIRM YOUR TOKEN"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  251:				cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  252:				try
+        -:  253:				{
+        1:  254:					it->token=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+        -:  255:				}
+    =====:  256:				catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  257:				{
+    =====:  258:					cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  259:					return 0;
+    =====:  260:				}
+call    0 never executed
+call    1 never executed
+        1:  261:				if(it->token==auto_token) //checks the token number
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        -:  262:				{
+        1:  263:					if(choice==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  264:					{
+    #####:  265:						cout<<"Confirm your time between 10 to 12"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  266:						cin>>temp;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  267:						try
+        -:  268:						{
+    #####:  269:							it->time_s=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+        -:  270:						}
+    =====:  271:						catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  272:						{
+    =====:  273:							cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  274:							return 0;
+    =====:  275:						}
+call    0 never executed
+call    1 never executed
+    #####:  276:						morning_slot(it->time_s);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  277:					}
+        1:  278:					if(choice==2)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  279:					{
+        1:  280:						cout<<"Confirm your time between 1 to 4"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  281:						cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  282:						try
+        -:  283:						{
+        1:  284:							it->time_s=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+        -:  285:						}
+    =====:  286:						catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  287:						{
+    =====:  288:							cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  289:							return 0;
+    =====:  290:						}
+call    0 never executed
+call    1 never executed
+        1:  291:						afternoon_slot(it->time_s);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  292:					}
+        -:  293:				}
+        -:  294:				else
+        -:  295:				{
+    #####:  296:					cout<<endl<<"Entered token is wrong. Please recheck your entered token"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  297:					return 0;
+        -:  298:				}
+        -:  299:			}
+        -:  300:			else
+        -:  301:			{
+    #####:  302:				cout<<endl<<"Aadhar number not found"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  303:				return 0;
+        -:  304:			}
+        1:  305:			break;
+        -:  306:		}
+        -:  307:	}
+        1:  308:	lc.push_back(u1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  309:	list<user>l1 (lc);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  310:	cout<<endl<<"Your Vaccination slot is selected successfully"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  311:	cout<<endl<<"__________________________________"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  312:	admin ad;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  313:	if(it->centre=="Hawkins")
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  314:	{
+    #####:  315:		--ad.vcount1;
+        -:  316:	}
+        1:  317:	if(it->centre=="Riverdale")
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        -:  318:	{
+        1:  319:		--ad.vcount2;
+        -:  320:	}
+        1:  321:	if(it->centre=="Central Perk")
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  322:	{
+    #####:  323:		--ad.vcount3;
+        -:  324:	}
+        1:  325:	lc2.push_back(ad);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  326:	list<admin>l2 (lc2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  327:	cout<<ad.vcount1<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  328:	cout<<ad.vcount2<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  329:	cout<<ad.vcount3<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  330:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  331:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  332:	return 0;
+        1:  333:}
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+function _ZN4user12morning_slotEi called 0 returned 0% blocks executed 0%
+    #####:  334:int user :: morning_slot(int t)
+        -:  335:{
+        -:  336:	while(1)
+        -:  337:	{
+    #####:  338:		if(t<10 || t>12)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  339:		{
+    #####:  340:			cout<<endl<<"Please enter valid time slot"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  341:			continue;
+        -:  342:		}
+        -:  343:		else
+        -:  344:		{
+        -:  345:			break;
+        -:  346:		}
+        -:  347:	}
+    #####:  348:	return 0;
+        -:  349:}
+function _ZN4user14afternoon_slotEi called 1 returned 100% blocks executed 44%
+        1:  350:int user :: afternoon_slot(int t)
+        -:  351:{
+        -:  352:	while(1)
+        -:  353:	{
+       1*:  354:		if(t<1 || t>4)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  355:		{
+    #####:  356:			cout<<endl<<"Please enter valid time slot"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  357:			continue;
+        -:  358:		}
+        -:  359:		else
+        -:  360:		{
+        -:  361:			break;
+        -:  362:		}
+        -:  363:	}
+        1:  364:	return 0;
+        -:  365:}
+function _ZN4user16register_detailsEv called 1 returned 100% blocks executed 81%
+        1:  366:int user :: register_details()
+        -:  367:{
+        1:  368:	string m_aadhar_no;
+call    0 returned 1
+        1:  369:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  370:	{
+    #####:  371:		cout<<"Empty File "<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  372:		return EXIT_FAILURE;
+        -:  373:	}
+        1:  374:	cout<<"Enter your Aadhar number to view your details: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  375:	cin>>m_aadhar_no;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  376:	cout<<endl<<"----------------View Details-----------------"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  377:	cout<<endl<<"Aadhar\tName\tAge\tGender\tCentre\t\tTime slot\tShots"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+       1*:  378:	for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1
+branch  5 taken 0 (fallthrough)
+        -:  379:	{
+        1:  380:		if(it->get_aadhar()==m_aadhar_no)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        -:  381:		{
+        1:  382:			it->view_registered_user();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  383:			break;
+        -:  384:		}
+        -:  385:	}
+        1:  386:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  387:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  388:	return EXIT_SUCCESS;
+        1:  389:}
+call    0 returned 1
+call    1 never executed
+function _ZN4user14get_vaccinatedEv called 1 returned 100% blocks executed 61%
+        1:  390:int user :: get_vaccinated()
+        -:  391:{
+        1:  392:	string m_aadhar_no;
+call    0 returned 1
+        -:  393:	int m_token;
+        1:  394:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  395:	{
+    #####:  396:		cout<<"Empty File "<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  397:		return EXIT_FAILURE;
+        -:  398:	}
+        1:  399:	cout<<"Enter your Aadhar number: ";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  400:	cin>>m_aadhar_no;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  401:	for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1
+branch  5 taken 0 (fallthrough)
+        -:  402:	{
+       1*:  403:		if(it->get_time()==0 || it->get_centre()=="NA")
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+call    8 returned 1
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0
+call   13 returned 1
+branch 14 taken 0 (fallthrough)
+branch 15 taken 1
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+        -:  404:		{
+    #####:  405:			cout<<endl<<"Please select a centre and time slot first to get vaccinated"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  406:			break;
+        -:  407:		}
+        -:  408:		else
+        -:  409:		{
+        1:  410:			if(it->get_aadhar()==m_aadhar_no)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        -:  411:			{
+        1:  412:				if(it->get_shots()>=3)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  413:				{
+    #####:  414:					cout<<endl<<"You have already completed your 3 doses"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  415:					return 0;
+        -:  416:				}
+        -:  417:				else
+        -:  418:				{
+        1:  419:					cout<<endl<<"PLEASE CONFIRM YOUR TOKEN"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  420:					cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  421:					try
+        -:  422:					{
+        1:  423:						m_token=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  424:					}
+    =====:  425:					catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  426:					{
+    =====:  427:						cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  428:						return 0;
+    =====:  429:					}
+call    0 never executed
+call    1 never executed
+        1:  430:					if(it->token==m_token) //checks the token number
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        -:  431:					{
+        1:  432:						++it->shots;
+call    0 returned 1
+        1:  433:						cout<<endl<<"***********Congratulations on getting vaccinated**********"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  434:						cout<<endl<<"You have completed "<<it->shots<<" doses"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  435:						break;
+        -:  436:						//++count;
+        -:  437:					}
+        -:  438:					else
+        -:  439:					{
+    #####:  440:						cout<<endl<<"Entered token is wrong"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  441:						return 0;
+        -:  442:					}
+        -:  443:				}
+        -:  444:			}
+        -:  445:		}
+        -:  446:	}
+        1:  447:	lc.push_back(u1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  448:	list<user>l1 (lc);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  449:
+        1:  450:	return 0;
+        1:  451:}
+call    0 returned 1
+call    1 returned 1
+call    2 never executed
+function _ZN4user10get_aadharB5cxx11Ev called 6 returned 100% blocks executed 100%
+        6:  452:string user :: get_aadhar()
+        -:  453:{
+        6:  454:	return this->aadhar_no;
+call    0 returned 6
+        -:  455:}
+function _ZN4user10get_centreB5cxx11Ev called 2 returned 100% blocks executed 100%
+        2:  456:string user :: get_centre()
+        -:  457:{
+        2:  458:	return this->centre;
+call    0 returned 2
+        -:  459:}
+function _ZN4user8get_nameB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  460:string user :: get_name()
+        -:  461:{
+    #####:  462:	return this->name;
+call    0 never executed
+        -:  463:}
+function _ZN4user9get_tokenEv called 0 returned 0% blocks executed 0%
+    #####:  464:int user :: get_token()
+        -:  465:{
+    #####:  466:	cout<<"Token: "<<token;
+call    0 never executed
+call    1 never executed
+    #####:  467:	return this->token;
+        -:  468:}
+function _ZN4user9get_shotsEv called 5 returned 100% blocks executed 100%
+        5:  469:int user :: get_shots()
+        -:  470:{
+        5:  471:	return this->shots;
+        -:  472:}
+function _ZN4user8get_timeEv called 1 returned 100% blocks executed 100%
+        1:  473:int user :: get_time()
+        -:  474:{
+        1:  475:	return this->time_s;
+        -:  476:}
+function _ZN4user7get_ageEv called 0 returned 0% blocks executed 0%
+    #####:  477:int user :: get_age()
+        -:  478:{
+    #####:  479:	return this->age;
+        -:  480:}
+        -:  481:
+        -:  482:
+function _ZN5admin14show_bene_dataEv called 2 returned 100% blocks executed 86%
+        2:  483:int admin :: show_bene_data()
+        -:  484:{
+        2:  485:	if(l1.empty())
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+        -:  486:	{
+    #####:  487:		cout<<"Empty File "<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  488:		return EXIT_FAILURE;
+        -:  489:	}
+        2:  490:	cout<<endl;
+call    0 returned 2
+        2:  491:	cout<<endl<<"Aadhar\tName\tAge\tGender\tCentre\t\tTime slot\tShots"<<endl<<endl;
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+        4:  492:	for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+call    0 returned 2
+call    1 returned 2
+call    2 returned 4
+call    3 returned 4
+branch  4 taken 2
+branch  5 taken 2 (fallthrough)
+        -:  493:	{
+        2:  494:		it->view_registered_user();
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  495:	}
+        2:  496:	system("read a");
+call    0 returned 2
+        2:  497:	system("clear");
+call    0 returned 2
+        2:  498:	return 0;
+        -:  499:}
+function _ZN5admin17add_vaccine_stockEv called 1 returned 100% blocks executed 38%
+        1:  500:int admin :: add_vaccine_stock()
+        -:  501:{
+        1:  502:	admin ad;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  503:	int choice,add=0;
+        1:  504:	vector<string> v1;
+call    0 returned 1
+        1:  505:	v1.push_back("1. Hawkins");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        1:  506:	v1.push_back("2. Riverdale");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        1:  507:	v1.push_back("3. Central Perk");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+call    8 returned 1
+call    9 never executed
+call   10 never executed
+        4:  508:	for(string it:v1)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 3
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 3
+call    7 returned 4
+branch  8 taken 3
+branch  9 taken 1 (fallthrough)
+        -:  509:	{
+        3:  510:		cout<<it<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  511:	}
+call    0 returned 3
+call    1 never executed
+        1:  512:	cout<<endl<<"Select the slot in which you want to add vaccine stock: "<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  513:	cin>>temp;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  514:	try
+        -:  515:	{
+        1:  516:		choice=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  517:	}
+    =====:  518:	catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  519:	{
+    =====:  520:		cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  521:		return 0;
+    =====:  522:	}
+call    0 never executed
+call    1 never executed
+        1:  523:	if(choice==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  524:	{
+    #####:  525:		cout<<"\n\t\t-->>For Center 1<<--"<<endl; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  526:		cout<<endl<<"Vaccine in Center *"<<ad.centre1<<"* are: "<<ad.vcount1<<endl; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####:  527:		cout<<"\n\tEnter Number of vaccines you want to add: "; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  528:		cin>>temp; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  529:		try
+        -:  530:		{
+    #####:  531:			add=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  532:		}
+    =====:  533:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  534:		{
+    =====:  535:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  536:			return 0;
+    =====:  537:		}
+call    0 never executed
+call    1 never executed
+        -:  538:
+    #####:  539:		accum_mutex.lock();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  540:		ad.vcount1=ad.vcount1+add;
+    #####:  541:		accum_mutex.unlock(); 
+call    0 never executed
+    #####:  542:		cout<<endl<<"......Adding........"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  543:		sleep(2);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  544:		cout<<endl<<endl<<"Vaccines added to the center"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        -:  545:	}
+        1:  546:	if(choice==2)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  547:	{
+        1:  548:		cout<<"\n\t\t-->>For Center 2<<--"<<endl; 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  549:		cout<<endl<<"Vaccine in Center *"<<ad.centre2<<"* are: "<<ad.vcount2<<endl; 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:  550:		cout<<"\n\tEnter Number of vaccines you want to add: "; 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  551:		cin>>temp; 
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  552:		try
+        -:  553:		{
+        1:  554:			add=stoi(temp);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  555:		}
+    =====:  556:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  557:		{
+    =====:  558:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  559:			return 0;
+    =====:  560:		}
+call    0 never executed
+call    1 never executed
+        1:  561:		ad.vcount2=ad.vcount2+add; 
+        1:  562:		cout<<endl<<"......Adding........"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  563:		sleep(2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  564:		cout<<endl<<"Vaccines added to the center"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        -:  565:	}
+        1:  566:	if(choice==3)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  567:	{
+    #####:  568:		cout<<"\n\t\t-->>For Center 3<<--"<<endl; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  569:		cout<<endl<<"Vaccine in Center *"<<ad.centre3<<"* are: "<<ad.vcount3<<endl; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####:  570:		cout<<"\n\tEnter Number of vaccines you want to add: "; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  571:		cin>>temp; 
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  572:		try
+        -:  573:		{
+    #####:  574:			add=stoi(temp);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  575:		}
+    =====:  576:		catch(exception& ex)
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  577:		{
+    =====:  578:			cout<<endl<<"Exception Occured...Enter only digits"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    =====:  579:			return 0;
+    =====:  580:		}
+call    0 never executed
+call    1 never executed
+    #####:  581:		ad.vcount3=ad.vcount3+add; 
+    #####:  582:		cout<<endl<<"......Adding........"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  583:		sleep(2);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  584:		cout<<endl<<"Vaccines added to the center"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  585:		system("read");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  586:	}
+        1:  587:	l2.push_back(ad);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  588:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  589:	return 0;
+        1:  590:}
+call    0 returned 1
+call    1 returned 1
+call    2 never executed
+call    3 never executed
+function _ZN5admin17get_vaccine_stockEv called 1 returned 100% blocks executed 100%
+        1:  591:int admin :: get_vaccine_stock()
+        -:  592:{
+        1:  593:	cout<<centre1<<"\t\t\t"<<vcount1<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:  594:	cout<<centre2<<"\t\t"<<vcount2<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:  595:	cout<<centre3<<"\t\t"<<vcount3<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:  596:	return EXIT_SUCCESS;
+        -:  597:}
+function _ZN5admin21display_vaccine_stockEv called 1 returned 100% blocks executed 91%
+        1:  598:int admin :: display_vaccine_stock()
+        -:  599:{
+        1:  600:	if(l2.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  601:	{
+    #####:  602:		cout<<"Empty File "<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  603:		return 0;
+        -:  604:	}
+        1:  605:	cout<<endl<<endl<<"_____________________________"<<endl<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+        1:  606:	cout<<endl<<endl<<"Centre"<<"\t\t"<<"Vaccine Count"<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+        2:  607:	for(list<admin>::iterator it=l2.begin();it!=l2.end();it++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        -:  608:	{
+        1:  609:		it->get_vaccine_stock();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  610:	}
+        1:  611:	cout<<endl<<"_____________________________"<<endl<<endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+        1:  612:	system("read a");
+call    0 returned 1
+        1:  613:	system("clear");
+call    0 returned 1
+        1:  614:	return EXIT_SUCCESS;
+        -:  615:
+        -:  616:}
+function _ZN5admin23delete_fully_vaccinatedEv called 1 returned 100% blocks executed 60%
+        1:  617:int admin :: delete_fully_vaccinated()
+        -:  618:{
+        1:  619:	int flag=0;
+        1:  620:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  621:	{
+    #####:  622:		printf("\nEmpty Records\n");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  623:		return 0;
+        -:  624:	}
+        1:  625:	string  m_aadhar_no;
+call    0 returned 1
+        1:  626:	cout<<endl<<"Enter the Aadhar number whose record you want to delete:";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  627:	cin>>m_aadhar_no;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  628:	for(list<user>::iterator it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1
+branch  5 taken 0 (fallthrough)
+        -:  629:	{	
+        1:  630:		if(it->get_aadhar()==m_aadhar_no)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        -:  631:		{
+        1:  632:			if(it->get_shots()==3)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  633:			{
+        -:  634:
+    #####:  635:				it=l1.erase(it);
+call    0 never executed
+call    1 never executed
+    #####:  636:				flag=1;
+    #####:  637:				break;
+        -:  638:			}
+        -:  639:			else
+        -:  640:			{
+        1:  641:				cout<<"This beneficiary has not completed his all doses."<<endl<<"----You cannot delete this record.----"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  642:				return 0;
+        -:  643:			}
+        -:  644:		}
+        -:  645:	}
+    #####:  646:	if(flag==1)
+branch  0 never executed
+branch  1 never executed
+        -:  647:	{
+    #####:  648:		cout<<"The record of aadhar number deleted succesfully"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  649:	}
+        -:  650:	else
+        -:  651:	{
+    #####:  652:		cout<<endl<<"Beneficiary with aadhar number "<<m_aadhar_no<<" does not exit"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+        -:  653:	}
+    #####:  654:	return EXIT_SUCCESS;
+        1:  655:}
+call    0 returned 1
+call    1 never executed
+function _ZN5admin14non_vaccinatedEv called 1 returned 100% blocks executed 78%
+        1:  656:int admin :: non_vaccinated()
+        -:  657:{
+        1:  658:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  659:	{
+    #####:  660:		cout<<endl<<"Empty Records"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  661:		return 0;
+        -:  662:	}
+        1:  663:	cout<<endl<<"Aadhar\tName\tAge\tGender\tCentre\t\tTime slot\tShots"<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  664:	int flag=0;
+        1:  665:	list<user> :: iterator it;
+call    0 returned 1
+        2:  666:	for(it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        -:  667:	{
+        1:  668:		if(it->get_shots()==0)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+        -:  669:		{
+    #####:  670:			flag=1;
+    #####:  671:			break;
+        -:  672:		}
+        -:  673:	}
+        1:  674:	if(flag==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  675:	{
+    #####:  676:		it->view_registered_user();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  677:	}
+        -:  678:	else
+        -:  679:	{
+        1:  680:		cout<<endl<<"No Records found"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        -:  681:	}
+        1:  682:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  683:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  684:	return EXIT_SUCCESS;
+        -:  685:}
+function _ZN5admin16fully_vaccinatedEv called 1 returned 100% blocks executed 81%
+        1:  686:int admin :: fully_vaccinated()
+        -:  687:{
+        1:  688:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  689:	{
+    #####:  690:		cout<<endl<<"Empty Records"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  691:		return 0;
+        -:  692:	}
+        1:  693:	cout<<endl<<"Aadhar\tName\tAge\tGender\tCentre\t\tTime slot\tShots"<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  694:	int flag=0;
+        1:  695:	list<user> :: iterator it;
+call    0 returned 1
+        2:  696:	for(it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 returned 1
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        -:  697:	{
+        1:  698:		if(it->get_shots()==3)
+call    0 returned 1
+call    1 returned 1
+        -:  699:		{
+        -:  700:			flag==1;
+        -:  701:		}
+        -:  702:	}
+        1:  703:	if(flag==1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  704:	{
+    #####:  705:		it->view_registered_user();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  706:	}
+        -:  707:	else
+        -:  708:	{
+        1:  709:		cout<<endl<<"No Records found"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        -:  710:	}
+        1:  711:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  712:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  713:	return EXIT_SUCCESS;
+        -:  714:}
+function _ZN5admin16today_vaccinatedEv called 1 returned 100% blocks executed 78%
+        1:  715:int admin :: today_vaccinated()
+        -:  716:{
+        1:  717:	if(l1.empty())
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+        -:  718:	{
+    #####:  719:		cout<<"Empty File "<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  720:		return 0;
+        -:  721:	}
+        1:  722:	cout<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  723:	cout<<endl<<"Aadhar\tName\tAge\tGender\tCentre\t\tTime slot\tShots"<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  724:	int flag=0;
+        1:  725:	list<user> :: iterator it;
+call    0 returned 1
+       1*:  726:	for(it=l1.begin();it!=l1.end();it++)
+call    0 returned 1
+call    1 never executed
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1
+branch  5 taken 0 (fallthrough)
+        -:  727:	{
+        1:  728:		if(it->get_shots()>0)
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        -:  729:		{
+        1:  730:			flag=1;
+        1:  731:			break;
+        -:  732:		}
+        -:  733:	}
+        1:  734:	if(flag==1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:  735:	{
+        1:  736:		it->view_registered_user();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  737:	}
+        -:  738:	else
+        -:  739:	{
+    #####:  740:		cout<<endl<<"No Records found"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  741:	}
+        1:  742:	system("read a");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  743:	system("clear");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  744:	return EXIT_SUCCESS;
+        -:  745:}
+        -:  746:
+        -:  747:#endif
